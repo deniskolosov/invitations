@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="text-align:center">Invitation Form</h1>
+<div style="margin-left:30%;width:40%; padding: 20px 20px; background:#ffa500"><form action="" method="post" name="invitation-form">
+    {{form.hidden_tag()}}
+    <div style="margin-left:20%;">
+    Booking Number:{{ with_errors(form.booking_number, style='font-weight: bold') }}
+    Name: {{ with_errors(form.name, style='font-weight: bold') }}
+    Last Name: {{ with_errors(form.last_name, style='font-weight: bold') }}
+    Sex: {{ with_errors(form.sex, style='font-weight: bold') }}
+    Passport Number: {{ with_errors(form.passport_number, style='font-weight: bold') }}<br>
+    Check, if you need delivery: {{ form.delivery_needed }} <br>
+    Citizenship: {{ with_errors(form.citizenship) }}<br>
+    Birth Date: {{ form.birth_date(type="date") }}<br>
+    Entry Date: {{ form.entry_date(type="date") }}<br>
+    Exit Date: {{ form.exit_date(type="date") }} <br>
+    Kids: {{ with_errors(form.kids) }}
+    transport: {{ with_errors(form.transport) }}
+    email: {{ with_errors(form.email) }}
+    address: {{ with_errors(form.address) }}
+    cities: {{ with_errors(form.cities) }}
+    Check, if double-entry: {{ with_errors(form.if_double) }}<br>
+    </div>
+    <p style="margin-left:35%"><input type="submit" value="Submit"/></p>
+</div>
+</form>
+{% endblock %}

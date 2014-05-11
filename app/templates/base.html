@@ -1,0 +1,41 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - cubahostel.ru</title>
+    {% else %}
+    <title>Invitation form</title>
+    {% endif %}
+     <style type="text/css">
+         body{
+         background:#dcedcf;
+         }
+
+     </style>
+  </head>
+  <body>
+    <div>Home: <a href="http://www.cubahostel.ru/">http://www.mysite.ru</a></div>
+    <hr>
+     {% macro with_errors(field) %}
+    <div class="form_field">
+    {% if field.errors %}
+        {% set css_class = 'has_error ' + kwargs.pop('class', '') %}
+        {{ field(class=css_class, **kwargs) }}
+        <ul style="list-style:none;color:red;padding: 0">
+            {% for error in field.errors %}<li>{{ error|e }}</li>{% endfor %}</ul>
+    {% else %}
+        {{ field(**kwargs) }}
+    {% endif %}
+
+    </div>
+    {% endmacro %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

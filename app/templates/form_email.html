@@ -1,0 +1,52 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Forms list</title>
+</head>
+<body>
+<h1>Получена форма:</h1>
+
+<div style="background:f0f0f0">
+<table>
+    <caption>Данные для пользователя <b>{{ p.name }} {{ p.last_name }}</b></caption>
+    <th>Booking<br>Number</th>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Sex:</th>
+    <th>Passport Number:</th>
+    <th>Delivery Needed:</th>
+    <th>Citizenship:</th>
+    <th>Birth Date:</th>
+    <th>Entry Date:</th>
+    <th>Exit Date:</th>
+    <th>Kids:</th>
+    <th>Transport:</th>
+    <th>Email:</th>
+    <th>Address:</th>
+    <th>Cities:</th>
+    <th>Double-entry:</th>
+    <tr>
+        <td>{{p.booking_number }}</td>
+        <td>{{p.name }}</td>
+        <td>{{p.last_name }}</td>
+        <td>{{p.sex }}</td>
+        <td>{{p.passport_number }}</td>
+        <td>{{p.delivery_needed }}</td>
+        <td>{{p.citizenship }}</td>
+        <td>{{p.birth_date }}</td>
+        <td>{{p.entry_date }}</td>
+        <td>{{p.exit_date }}</td>
+        <td>{{p.kids }}</td>
+        <td>{{p.transport }}</td>
+        <td>{{p.email }}</td>
+        <td>{{p.address }}</td>
+        <td>{{p.cities }}</td>
+        <td>{{p.if_double }}</td>
+    </tr>
+</table>
+</div>
+
+</form>
+</body>
+</html>

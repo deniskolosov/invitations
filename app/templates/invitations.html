@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Список приглашений:</h1>
+
+    <div style="background:f0f0f0">
+        <table style="background: #ccc;">
+            <caption="Полученные формы"></caption>
+            <th>Booking<br>Number</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Sex:</th>
+            <th>Passport Number:</th>
+            <th>Delivery Needed:</th>
+            <th>Citizenship:</th>
+            <th>Birth Date:</th>
+            <th>Entry Date:</th>
+            <th>Exit Date:</th>
+            <th>Kids:</th>
+            <th>Transport:</th>
+            <th>Email:</th>
+            <th>Address:</th>
+            <th>Cities:</th>
+            <th>Double-entry:</th>
+            <th>Send record to mail</th>
+            {% for p in persons %}
+            <tr style="background:#eee;border:1px solid black">
+
+                <form action="" method="post" name="submit-form">
+                {{ form.hidden_field(value=persons.index(p)) }}
+                <td>{{p.booking_number }}</td>
+                <td>{{p.name }}</td>
+                <td>{{p.last_name }}</td>
+                <td>{{p.sex }}</td>
+                <td>{{p.passport_number }}</td>
+                <td>{{p.delivery_needed }}</td>
+                <td>{{p.citizenship }}</td>
+                <td>{{p.birth_date }}</td>
+                <td>{{p.entry_date }}</td>
+                <td>{{p.exit_date }}</td>
+                <td>{{p.kids }}</td>
+                <td>{{p.transport }}</td>
+                <td>{{p.email }}</td>
+                <td>{{p.address }}</td>
+                <td>{{p.cities }}</td>
+                <td>{{p.if_double }}</td>
+                <td>{{form.submit}}</td>
+                </form>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

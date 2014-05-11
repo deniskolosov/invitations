@@ -1,0 +1,17 @@
+Booking Number: {{ p.booking_number }}
+Name: {{p.name}}
+Last Name: {{p.last_name}}
+Sex: {{p.sex}}
+Passport Number: {{p.passport_number}}
+Delivery Needed: {{p.delivery_needed}}
+Citizenship: {{p.citizenship}}
+Birth Date: {{p.birth_date}}
+Entry Date: {{p.entry_date}}
+Exit Date: {{p.exit_date}}
+
+Kids: {{p.kids}}
+transport: {{p.transport}}
+email: {{p.email}}
+address: {{p.address}}
+cities: {{p.cities}}
+Check, if double-entry: {{p.if_double}}
